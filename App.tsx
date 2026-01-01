@@ -100,12 +100,10 @@ const App: React.FC = () => {
 
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
-        {/* Abstract subtle background element */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border-[0.5px] border-gray-100 rounded-full opacity-40 pointer-events-none"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] border-[0.5px] border-gray-100 rounded-full opacity-30 pointer-events-none"></div>
 
         <div className="max-w-5xl w-full text-center space-y-24 relative z-10">
-          
           <div className="space-y-8">
             <Reveal delay={100} className="flex justify-center">
                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-50 border border-gray-100">
@@ -160,8 +158,6 @@ const App: React.FC = () => {
       <section id="bento-specs" className="py-24 px-6 border-t border-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-            
-            {/* Primary Stat Card */}
             <Reveal delay={0} className="md:col-span-8">
                <div className="h-full bg-gray-50 border border-gray-100 p-12 rounded-[3rem] group hover:bg-white hover:border-black transition-all duration-500">
                   <div className="flex justify-between items-start mb-16">
@@ -179,18 +175,16 @@ const App: React.FC = () => {
                </div>
             </Reveal>
 
-            {/* Storage Card */}
             <Reveal delay={200} className="md:col-span-4">
                <div className="h-full bg-white border border-gray-100 p-12 rounded-[3rem] group hover:border-black transition-all duration-500 flex flex-col justify-end">
                   <HardDrive className="w-6 h-6 mb-16 text-gray-200 group-hover:text-black transition-colors" />
                   <div className="text-6xl font-black tracking-tighter mb-2">
-                    <AnimatedNumber value={2.0} />GB
+                    <AnimatedNumber value={2.0} decimals={1} />GB
                   </div>
                   <div className="text-xs font-bold tracking-[0.4em] uppercase text-gray-400">Compressed Size</div>
                </div>
             </Reveal>
 
-            {/* Context Card */}
             <Reveal delay={300} className="md:col-span-4">
                <div className="h-full bg-white border border-gray-100 p-12 rounded-[3rem] group hover:border-black transition-all duration-500">
                   <div className="text-6xl font-black tracking-tighter mb-2">
@@ -203,7 +197,6 @@ const App: React.FC = () => {
                </div>
             </Reveal>
 
-            {/* Knowledge Card */}
             <Reveal delay={400} className="md:col-span-8">
                <div className="h-full bg-gray-50 border border-gray-100 p-12 rounded-[3rem] group hover:bg-white hover:border-black transition-all duration-500 flex flex-col md:flex-row items-end justify-between">
                   <div className="text-left">
@@ -288,7 +281,7 @@ const App: React.FC = () => {
                     <div className="mt-6 md:mt-0 flex items-center gap-4">
                        <p className="text-sm font-light text-gray-400">{step.desc}</p>
                        {step.url && (
-                         <a href={step.url} target="_blank" className="p-3 bg-gray-50 rounded-xl hover:bg-black hover:text-white transition-all">
+                         <a href={step.url} target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 rounded-xl hover:bg-black hover:text-white transition-all">
                            <ExternalLink className="w-4 h-4" />
                          </a>
                        )}
@@ -305,8 +298,8 @@ const App: React.FC = () => {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
           <Reveal className="md:col-span-5 space-y-8">
              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-black rounded-2xl flex items-center justify-center">
-                  <img src="https://i.ibb.co/39d2BDdW/Untitled-design-removebg-preview.png" alt="KIPP Logo" className="w-8 h-8 invert" />
+                <div className="w-12 h-12 bg-black rounded-2xl flex items-center justify-center overflow-hidden">
+                  <img src="https://i.ibb.co/39d2BDdW/Untitled-design-removebg-preview.png" alt="KIPP Logo" className="w-8 h-8 invert scale-125" />
                 </div>
                 <div className="flex flex-col">
                    <span className="text-2xl font-black tracking-tighter uppercase">KIPP</span>
@@ -321,10 +314,10 @@ const App: React.FC = () => {
           <div className="md:col-span-3 space-y-8">
              <h6 className="text-[9px] font-bold tracking-[0.5em] uppercase text-gray-300">Connect</h6>
              <div className="flex flex-col gap-4 items-start">
-                <a href="https://instagram.com/vatistasdimitris" target="_blank" className="flex items-center gap-3 text-sm font-medium hover:translate-x-1 transition-transform">
+                <a href="https://instagram.com/vatistasdimitris" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm font-medium hover:translate-x-1 transition-transform">
                   <Instagram className="w-4 h-4" /> @vatistasdimitris
                 </a>
-                <a href="https://ollama.com/vatistasdim/KIPP" target="_blank" className="flex items-center gap-3 text-sm font-medium hover:translate-x-1 transition-transform">
+                <a href="https://ollama.com/vatistasdim/KIPP" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm font-medium hover:translate-x-1 transition-transform">
                   <Terminal className="w-4 h-4" /> Repository
                 </a>
              </div>
@@ -340,9 +333,6 @@ const App: React.FC = () => {
           </div>
         </div>
       </footer>
-
-      {/* Navigation Shadow (Bottom Indicator) */}
-      <div className="fixed bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gray-100 to-transparent opacity-50"></div>
     </div>
   );
 };

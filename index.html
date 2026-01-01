@@ -7,11 +7,12 @@
     <title>KIPP — Kosmic Intelligence</title>
     <meta name="description" content="KIPP: Kosmic Intelligence Pattern Perceptron. An unfiltered 2.7B parameter model by Vatistas Dimitris.">
     
-    <!-- Favicon -->
+    <!-- Favicon Fixed -->
     <link rel="icon" type="image/png" href="https://i.ibb.co/39d2BDdW/Untitled-design-removebg-preview.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --bg: #ffffff;
@@ -24,6 +25,7 @@
             background-color: var(--bg);
             color: var(--fg);
             overflow-x: hidden;
+            margin: 0;
         }
         ::selection {
             background-color: var(--fg);
@@ -73,13 +75,16 @@
           background: url('https://grainy-gradients.vercel.app/noise.svg');
         }
     </style>
-<script type="importmap">
+
+    <script type="importmap">
 {
   "imports": {
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "lucide-react": "https://esm.sh/lucide-react@0.475.0?external=react",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
+    "react/": "https://esm.sh/react@^19.2.3/"
   }
 }
 </script>
@@ -87,5 +92,7 @@
 <body class="antialiased">
     <div class="noise-bg"></div>
     <div id="root"></div>
+    <!-- Explicit entry point to prevent blank screen -->
+    <script type="module" src="./index.tsx"></script>
 </body>
 </html>
