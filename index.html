@@ -5,22 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KIPP — Kosmic Intelligence</title>
+    <meta name="description" content="KIPP: Kosmic Intelligence Pattern Perceptron. An unfiltered 2.7B parameter model by Vatistas Dimitris.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/39d2BDdW/Untitled-design-removebg-preview.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #000000;
+            --sub: #666666;
+            --border: #f0f0f0;
+        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #000000;
+            background-color: var(--bg);
+            color: var(--fg);
+            overflow-x: hidden;
         }
         ::selection {
-            background-color: #000000;
-            color: #ffffff;
+            background-color: var(--fg);
+            color: var(--bg);
         }
-        @keyframes fade-in-up {
+        
+        /* Custom scrollbar for premium look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e0e0e0;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cccccc;
+        }
+
+        /* Smooth Reveal Animation */
+        @keyframes reveal {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -28,11 +57,20 @@
             }
         }
         .animate-reveal {
-            animation: fade-in-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: reveal 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
         }
-        .glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
+
+        .noise-bg {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          content: "";
+          opacity: 0.02;
+          z-index: 9999;
+          pointer-events: none;
+          background: url('https://grainy-gradients.vercel.app/noise.svg');
         }
     </style>
 <script type="importmap">
@@ -47,6 +85,7 @@
 </script>
 </head>
 <body class="antialiased">
+    <div class="noise-bg"></div>
     <div id="root"></div>
 </body>
 </html>
